@@ -1,0 +1,4 @@
+{
+  "harpoon": { "branch": "master", "commit": "8cb54c4003045fe1b690de96638d334de9449546" },
+  "lazy.nvim": { "branch": "main", "commit": "761b8388af5bcb451e30d886163fcd129278e1d1" }
+}
