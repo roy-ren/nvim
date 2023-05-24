@@ -9,7 +9,7 @@ local setup_maps = function(opts)
         local rhs = value[1]
         local desc = value.args.desc
 
-        print(desc .. " mode:" .. mode .. " form[" .. lhs .. "] to[" .. tostring(rhs) .. "]")
+        -- print(desc .. " mode:" .. mode .. " form[" .. lhs .. "] to[" .. tostring(rhs) .. "]")
         map.set(mode, lhs, rhs)
     end
 end

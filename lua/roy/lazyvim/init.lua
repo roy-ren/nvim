@@ -14,7 +14,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 M.setup = function(opts)
-    print("====>> lazy setup")
     require("lazy").setup(opts)
 end
 
