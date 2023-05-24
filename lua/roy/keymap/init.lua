@@ -6,10 +6,10 @@ local setup_maps = function(opts)
     for key, value in pairs(opts.maps) do
         local mode = opts.mode
         local lhs = key
-        local rhs = value.rhs
+        local rhs = value[1]
         local desc = value.args.desc
 
---        print(desc .. " mode:" .. mode .. " form[" .. lhs .. "] to[" .. tostring(rhs) .. "]")
+        print(desc .. " mode:" .. mode .. " form[" .. lhs .. "] to[" .. tostring(rhs) .. "]")
         map.set(mode, lhs, rhs)
     end
 end
