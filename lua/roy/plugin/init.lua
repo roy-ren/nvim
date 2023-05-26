@@ -1,11 +1,9 @@
 local M = {
     {
         "nvim-lua/plenary.nvim",
-        lazy = false,
     },
     {
         "ThePrimeagen/harpoon",
-        lazy = false,
     },
     {
         'nvim-lualine/lualine.nvim',
@@ -35,8 +33,12 @@ local M = {
             { 'L3MON4D3/LuaSnip' },     -- Required
         }
     },
+    { "onsails/lspkind.nvim" },
     {
-        "onsails/lspkind.nvim"
+        "nvim-treesitter/nvim-treesitter",
+        opts = function()
+            return require("roy.plugin.configs.treesisster")
+        end
     }
 }
 

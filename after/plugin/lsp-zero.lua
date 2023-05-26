@@ -38,9 +38,13 @@ cmp.setup({
         completeopt = 'menu,menuone,noinsert'
     },
     mapping = {
-        ['<Tab>'] = cmp_action.luasnip_supertab(),
-        ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        --[[
+        ['<Tab>'] = cmp_action.tab_complete(),
+        ['<S-Tab>'] = cmp_action.select_prev_or_fallback(),
+    --]]
     },
+
     window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
