@@ -15,8 +15,8 @@ local setup_maps = function(opts)
 end
 
 local handle_maps = function(opts)
-    setup_maps { mode ="n", maps = opts.enable.n }
-    setup_maps { mode ="i", maps = opts.enable.i }
+    setup_maps { mode = "n", maps = opts.enable.n }
+    setup_maps { mode = "i", maps = opts.enable.i }
 end
 
 vim.g.mapleader = " "

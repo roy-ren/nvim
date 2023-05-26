@@ -39,7 +39,37 @@ local M = {
         opts = function()
             return require("roy.plugin.configs.treesisster")
         end
-    }
+    },
+    -- file managing , picker etc
+    {
+        "nvim-tree/nvim-tree.lua",
+        opts = function()
+            return require("roy.plugin.configs.nvimtree")
+        end,
+        config = function(_, opts)
+            require("nvim-tree").setup(opts)
+        end,
+    },
+    --[[
+    {
+        "nvim-telescope/telescope.nvim",
+        cmd = "Telescope",
+        config = function(_, opts)
+            local telescope = require "telescope"
+            telescope.setup(opts)
+        end,
+    },
+    --]]
+
+    -- Only load whichkey after all the gui
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        keys = { "<leader>", '"', "'", "`", "c", "v" },
+        config = function(_, opts)
+            require("which-key").setup(opts)
+        end,
+    },
 }
 
 -- vim.tbl_deep_extend
