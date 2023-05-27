@@ -2,6 +2,8 @@ local M = {}
 
 M.disable = {}
 
+local builtin = require('telescope.builtin')
+
 M.enable = {
     n = {
         ["<C-s>"] = {
@@ -27,6 +29,22 @@ M.enable = {
         ["<C-x>"] = {
             "<cmd>NvimTreeToggle<cr>",
             args = { desc = "Toggle folder tree" }
+        },
+        ["<leader>ff"] = {
+            builtin.find_files,
+            args = { desc = "Find files" }
+        },
+        ["<leader>fg"] = {
+            builtin.live_grep,
+            args = { desc = "live_grep" }
+        },
+        ["<leader>fb"] = {
+            builtin.buffers,
+            args = { desc = "find buffers" }
+        },
+        ["<leader>fh"] = {
+            builtin.help_tags,
+            args = { desc = "find help tags" }
         },
     },
 

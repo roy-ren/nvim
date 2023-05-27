@@ -50,17 +50,20 @@ local M = {
             require("nvim-tree").setup(opts)
         end,
     },
-    --[[
     {
         "nvim-telescope/telescope.nvim",
+        dependencies = {
+            { 'nvim-lua/plenary.nvim' },
+        },
         cmd = "Telescope",
+        opts = function()
+            return require("roy.plugin.configs.telescope")
+        end,
         config = function(_, opts)
             local telescope = require "telescope"
             telescope.setup(opts)
         end,
     },
-    --]]
-
     -- Only load whichkey after all the gui
     {
         "folke/which-key.nvim",
