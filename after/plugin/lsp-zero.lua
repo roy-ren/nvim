@@ -21,9 +21,21 @@ lsp.set_sign_icons({
     info = '»'
 })
 
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+-- Neovim v0.9 允许 LSP 服务器定义高亮组，这被称为语义标记。默认情况下启用此新功能。要禁用它，我们需要修改语言服务器的 server_capabilities 属性，更具体地说，我们需要“删除” semanticTokensProvider 属性。
+lsp.set_server_config({
+    on_init = function(client)
+        client.server_capabilities.semanticTokensProvider = nil
+    end
+})
 
 lsp.setup()
+
+-- << lua config
+require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+-- << lua config
+-- dart setup
+require('roy.lsp.dart').setup()
+require('roy.lsp.sourcekit').setup()
 
 -- Autocompletion
 -- 确保在 lsp-zero 之后设置 cmp ，这样你就可以正确地覆盖每个选项
