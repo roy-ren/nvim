@@ -4,12 +4,16 @@ local import = require('roy.checker').module.import
 import('roy.settings')
 
 -- add plugin manager lazyvim
-local lazyvim = import('roy.lazyvim')
-
 -- handle plugins
-local plugins = import({ 'roy.plugin', check = true })
+local lazyvim = import('roy.lazyvim')
+local plugins = import('roy.plugin')
 lazyvim.setup(plugins)
 
 -- config keymaps
 local keymap = import('roy.keymap')
 keymap.setup()
+
+-- config lsp
+local lsp = import('roy.lsp.lsp')
+lsp.prepare()
+lsp.setup_auto_completion()
