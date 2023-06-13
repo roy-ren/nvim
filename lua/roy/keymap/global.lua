@@ -14,17 +14,18 @@ M.enable = {
         ["<C-j>"] = { "<C-w>j", args = { desc = "切换至下边窗口" } },
         ["<C-k>"] = { "<C-w>k", args = { desc = "切换至上边窗口" } },
         ["<C-x>"] = { "<cmd>NvimTreeToggle<cr>", args = { desc = "Toggle folder tree" } },
+        ["<C-e>"] = { ui.toggle_quick_menu, args = { desc = "toggle harpoon quick menu" } },
         ["<leader>ff"] = { builtin.find_files, args = { desc = "Find files" } },
         ["<leader>fg"] = { builtin.live_grep, args = { desc = "live_grep" } },
         ["<leader>fb"] = { builtin.buffers, args = { desc = "find buffers" } },
         ["<leader>fh"] = { builtin.help_tags, args = { desc = "find help tags" } },
-        ["<Leader>a"] = { mark.add_file, args = { des = "add file to harpoon" } },
-        ["<C-e>"] = { ui.toggle_quick_menu, args = { des = "toggle harpoon quick menu" } },
+        ["<Leader>a"] = { mark.add_file, args = { desc = "add file to harpoon mark" } },
     },
 
     i = {
+        ["<C-s>"] = { "<Esc><cmd>w<cr>", args = { desc = "保存文件" } },
         ["<C-x>"] = { "<cmd>NvimTreeToggle<cr>", args = { desc = "Toggle folder tree" } },
-        ["<C-s>"] = { "<Esc><cmd>w<cr>", args = { desc = "保存文件" } }
+        ["<C-e>"] = { ui.toggle_quick_menu, args = { desc = "toggle harpoon quick menu" } },
     }
 }
 
