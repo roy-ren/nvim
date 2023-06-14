@@ -28,3 +28,7 @@ require("copilot").setup({
     suggestion = { enabled = false },
     panel = { enabled = false },
 })
+
+--<< flutter
+local options = import('roy.plugin.configs.flutter')
+require("flutter-tools").setup(options)

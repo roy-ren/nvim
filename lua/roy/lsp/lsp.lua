@@ -7,14 +7,29 @@ M.prepare = function()
     lsp.on_attach(function(client, bufnr)
         lsp.default_keymaps({ buffer = bufnr })
 
+        local opts = { buffer = bufnr, noremap = true, silent = true }
+
+        vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+        vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+        vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+        vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
+        vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
+        vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+        vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+        vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+        vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
+        vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+
+        vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
+        vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
+        vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
+
         -- Format file on save
         lsp.buffer_autoformat()
     end)
 
     -- ensure automatic installed language servers
-    lsp.ensure_installed({
-        'lua_ls',
-    })
+    lsp.ensure_installed({ 'lua_ls' })
 
     -- sign icons
     lsp.set_sign_icons({
@@ -24,20 +39,11 @@ M.prepare = function()
         info = '»'
     })
 
-    -- Neovim v0.9 允许 LSP 服务器定义高亮组，这被称为语义标记。默认情况下启用此新功能。要禁用它，我们需要修改语言服务器的 server_capabilities 属性，更具体地说，我们需要“删除” semanticTokensProvider 属性。
-    --[[
-    lsp.set_server_config({
-        on_init = function(client)
-            client.server_capabilities.semanticTokensProvider = nil
-        end
-    })
-    --]]
-
     lsp.setup()
 
     -- << lua config
     require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-    -- << lua config
+
     -- dart setup
     require('roy.lsp.language.dart').setup()
     require('roy.lsp.language.sourcekit').setup()

@@ -83,8 +83,19 @@ local M = {
         config = function()
             require("copilot_cmp").setup()
         end
-    }
-
+    },
+    {
+        'stevearc/dressing.nvim',
+        opts = {},
+    },
+    {
+        'akinsho/flutter-tools.nvim',
+        lazy = false,
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'stevearc/dressing.nvim', -- optional for vim.ui.select
+        },
+    },
 }
 
 -- vim.tbl_deep_extend
