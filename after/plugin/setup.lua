@@ -1,13 +1,17 @@
 local import = require('roy.checker').module.import
 
--- config lsp
+--<< config lsp
 local lsp = import('roy.lsp.lsp')
 if lsp then
     lsp.prepare()
-    lsp.setup_auto_completion()
 end
 
--- setup tree sitter
+local cmp = import('roy.lsp.cmp')
+if cmp then
+    cmp.setup()
+end
+
+--<< setup tree sitter
 local treesitter_config = require('nvim-treesitter.configs')
 if treesitter_config then
     local options = import('roy.plugin.configs.treesitter')
@@ -16,5 +20,11 @@ if treesitter_config then
     end
 end
 
--- setup leap
+--<< setup leap
 require('leap').add_default_mappings()
+
+--<< copilot
+require("copilot").setup({
+    suggestion = { enabled = false },
+    panel = { enabled = false },
+})

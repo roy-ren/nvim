@@ -16,6 +16,7 @@ M.enable = {
         ["<C-x>"] = { "<cmd>NvimTreeToggle<cr>", args = { desc = "Toggle folder tree" } },
         ["<C-e>"] = { ui.toggle_quick_menu, args = { desc = "toggle harpoon quick menu" } },
         ["<leader>ff"] = { builtin.find_files, args = { desc = "Find files" } },
+        ["<leader>o"] = { builtin.find_files, args = { desc = "Find files" } },
         ["<leader>fg"] = { builtin.live_grep, args = { desc = "live_grep" } },
         ["<leader>fb"] = { builtin.buffers, args = { desc = "find buffers" } },
         ["<leader>fh"] = { builtin.help_tags, args = { desc = "find help tags" } },
