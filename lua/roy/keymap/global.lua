@@ -23,6 +23,11 @@ M.enable = {
         ["<Leader>a"] = { mark.add_file, args = { desc = "add file to harpoon mark" } },
         ["<C-d>"] = { "<C-d>zz", args = { desc = "向下翻屏后，光标上下居中" } },
         ["<C-u>"] = { "<C-u>zz", args = { desc = "向上翻屏后，光标上下居中" } },
+        -- Resize window using <ctrl> arrow keys
+        ["<C-Up>"] = { "<cmd>hor res +2<cr>", args = { desc = "Increase window height" } },
+        ["<C-Down>"] = { "<cmd>hor res -2<cr>", args = { desc = "Decrease window height" } },
+        ["<C-Left>"] = { "<cmd>vert res -2<cr>", args = { desc = "Increase window width" } },
+        ["<C-Right>"] = { "<cmd>vert res +2<cr>", args = { desc = "Decrease window width" } },
     },
 
     i = {
