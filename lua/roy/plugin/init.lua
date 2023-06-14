@@ -64,6 +64,12 @@ local M = {
             require("which-key").setup(opts)
         end,
     },
+    {
+        "ggandor/leap.nvim",
+        dependencies = {
+            { "tpope/vim-repeat" }
+        },
+    }
 }
 
 -- vim.tbl_deep_extend

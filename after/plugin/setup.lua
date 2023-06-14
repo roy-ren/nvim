@@ -15,3 +15,6 @@ if treesitter_config then
         treesitter_config.setup(options)
     end
 end
+
+-- setup leap
+require('leap').add_default_mappings()
