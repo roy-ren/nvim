@@ -7,13 +7,14 @@ import('roy.settings')
 -- handle plugins
 local lazyvim = import('roy.lazyvim')
 local plugins = import('roy.plugin')
-lazyvim.setup(plugins)
+if lazyvim then
+    if plugins then
+        lazyvim.setup(plugins)
+    end
+end
 
 -- config keymaps
 local keymap = import('roy.keymap')
-keymap.setup()
-
--- config lsp
-local lsp = import('roy.lsp.lsp')
-lsp.prepare()
-lsp.setup_auto_completion()
+if keymap then
+    keymap.setup()
+end

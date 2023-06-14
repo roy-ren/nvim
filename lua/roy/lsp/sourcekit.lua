@@ -9,7 +9,10 @@ M.setup = function()
             root_dir = require('lspconfig.util').root_pattern("Package.swift", ".git"),
         }
     }
-    require('lspconfig').sourcekit.setup({})
+    local sourcekit = require('lspconfig').sourcekit
+    if sourcekit then
+        sourcekit.setup({})
+    end
 end
 
 return M

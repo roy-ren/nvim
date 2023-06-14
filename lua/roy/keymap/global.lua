@@ -20,6 +20,8 @@ M.enable = {
         ["<leader>fb"] = { builtin.buffers, args = { desc = "find buffers" } },
         ["<leader>fh"] = { builtin.help_tags, args = { desc = "find help tags" } },
         ["<Leader>a"] = { mark.add_file, args = { desc = "add file to harpoon mark" } },
+        ["<C-d>"] = { "<C-d>zz", args = { desc = "向下翻屏后，光标上下居中" } },
+        ["<C-u>"] = { "<C-u>zz", args = { desc = "向上翻屏后，光标上下居中" } },
     },
 
     i = {

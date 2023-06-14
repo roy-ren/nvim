@@ -25,11 +25,13 @@ M.prepare = function()
     })
 
     -- Neovim v0.9 允许 LSP 服务器定义高亮组，这被称为语义标记。默认情况下启用此新功能。要禁用它，我们需要修改语言服务器的 server_capabilities 属性，更具体地说，我们需要“删除” semanticTokensProvider 属性。
+    --[[
     lsp.set_server_config({
         on_init = function(client)
             client.server_capabilities.semanticTokensProvider = nil
         end
     })
+    --]]
 
     lsp.setup()
 

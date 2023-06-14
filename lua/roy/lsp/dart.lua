@@ -22,7 +22,10 @@ M.setup = function()
             }
         }
     }
-    require('lspconfig').dartls.setup({})
+    local dartls = require('lspconfig').dartls
+    if dartls then
+        dartls.setup({})
+    end
 end
 
 return M
