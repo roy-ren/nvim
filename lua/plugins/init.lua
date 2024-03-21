@@ -1,37 +1,29 @@
 return {
-  {
-    "stevearc/conform.nvim",
-    -- event = 'BufWritePre' -- uncomment for format on save
-    config = function()
-      require "configs.conform"
-    end,
-  },
-
-  -- {
-  --   "neovim/nvim-lspconfig",
-  --   config = function()
-  --     require("nvchad.configs.lspconfig").defaults()
-  --     require "configs.lspconfig"
-  --   end,
-  -- },
-
-  -- {
-  -- 	"williamboman/mason.nvim",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"lua-language-server", "stylua",
-  -- 			"html-lsp", "css-lsp" , "prettier"
-  -- 		},
-  -- 	},
-  -- },
-  --
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  require "plugins.overrides.cmp",
+  require "plugins.overrides.lsp",
+  require "plugins.overrides.mason",
+  require "plugins.overrides.null_ls",
+  require "plugins.overrides.tree",
+  require "plugins.overrides.treesitter",
+  -- custom new
+  require "plugins.new.better-escape",
+  require "plugins.new.bqf",
+  require "plugins.new.codeium",
+  require "plugins.new.conform-nvim",
+  require "plugins.new.crates",
+  require "plugins.new.dap-ui",
+  require "plugins.new.dap-virtual-text",
+  require "plugins.new.dap",
+  require "plugins.new.flutter",
+  require "plugins.new.harpoon",
+  require "plugins.new.leap",
+  require "plugins.new.neodev",
+  require "plugins.new.neotest",
+  require "plugins.new.noice",
+  require "plugins.new.nvim-lint",
+  require "plugins.new.rust-tools",
+  require "plugins.new.rust",
+  require "plugins.new.surround",
+  require "plugins.new.trouble",
+  require "plugins.new.xocdebuild-nvim",
 }
