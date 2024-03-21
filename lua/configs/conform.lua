@@ -117,7 +117,6 @@ local options = {
       prepend_args = {},
     },
   },
-
 }
 
 require("conform").setup(options)

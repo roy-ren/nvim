@@ -1,13 +1,19 @@
----@type ChadrcConfig
 local M = {}
 
 M.ui = {
-	theme = "onedark",
+  theme = "xcode",
+  statusline = {
+    theme = "vscode", -- default/vscode/vscode_colored/minimal
+  },
 
-	-- hl_override = {
-	-- 	Comment = { italic = true },
-	-- 	["@comment"] = { italic = true },
-	-- },
+  -- tabufline = {
+  --   lazyload = true,
+  --   overriden_modules = nil,
+  -- },
+  hl_override = {
+    Comment = { italic = true },
+    ["@comment"] = { italic = true },
+  },
 }
 
 return M
